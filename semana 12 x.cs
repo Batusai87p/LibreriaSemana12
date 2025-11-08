@@ -14,7 +14,7 @@ class Libreria
         // Validaciones
         if (string.IsNullOrEmpty(nombre))
         {
-            Console.WriteLine("❌ El nombre no puede estar vacío.");
+            Console.WriteLine(" El nombre no puede estar vacío.");
             return;
         }
 
@@ -23,7 +23,7 @@ class Libreria
         {
             if (nombres[i].ToLower() == nombre.ToLower())
             {
-                Console.WriteLine("❌ Ese libro ya existe.");
+                Console.WriteLine(" Ese libro ya existe.");
                 return;
             }
         }
@@ -35,13 +35,13 @@ class Libreria
 
         if (!double.TryParse(textoPrecio, out precio))
         {
-            Console.WriteLine("❌ El precio debe ser numérico.");
+            Console.WriteLine(" El precio debe ser numérico.");
             return;
         }
 
         if (precio < 0 || precio > 1000)
         {
-            Console.WriteLine("❌ El precio debe ser entre 0 y 1000.");
+            Console.WriteLine(" El precio debe ser entre 0 y 1000.");
             return;
         }
 
@@ -51,7 +51,7 @@ class Libreria
         nombres[^1] = nombre;
         precios[^1] = precio;
 
-        Console.WriteLine("✅ Libro registrado correctamente.");
+        Console.WriteLine(" Libro registrado correctamente.");
     }
 
     // MÉTODO MOSTRAR
@@ -59,7 +59,7 @@ class Libreria
     {
         if (nombres.Length == 0)
         {
-            Console.WriteLine("📭 No hay libros registrados.");
+            Console.WriteLine(" No hay libros registrados.");
             return;
         }
 
@@ -88,7 +88,7 @@ class Libreria
 
         if (index == -1)
         {
-            Console.WriteLine("❌ El libro no existe.");
+            Console.WriteLine(" El libro no existe.");
             return;
         }
 
@@ -97,7 +97,7 @@ class Libreria
 
         if (string.IsNullOrEmpty(nuevoNombre))
         {
-            Console.WriteLine("❌ El nombre no puede estar vacío.");
+            Console.WriteLine(" El nombre no puede estar vacío.");
             return;
         }
 
@@ -106,7 +106,7 @@ class Libreria
         {
             if (nombres[i].ToLower() == nuevoNombre.ToLower() && i != index)
             {
-                Console.WriteLine("❌ Ya existe otro libro con ese nombre.");
+                Console.WriteLine(" Ya existe otro libro con ese nombre.");
                 return;
             }
         }
@@ -117,20 +117,20 @@ class Libreria
 
         if (!double.TryParse(texto, out nuevoPrecio))
         {
-            Console.WriteLine("❌ El precio debe ser numérico.");
+            Console.WriteLine(" El precio debe ser numérico.");
             return;
         }
 
         if (nuevoPrecio < 0 || nuevoPrecio > 1000)
         {
-            Console.WriteLine("❌ El precio debe ser entre 0 y 1000.");
+            Console.WriteLine(" El precio debe ser entre 0 y 1000.");
             return;
         }
 
         nombres[index] = nuevoNombre;
         precios[index] = nuevoPrecio;
 
-        Console.WriteLine("✅ Libro modificado correctamente.");
+        Console.WriteLine(" Libro modificado correctamente.");
     }
 
     // MÉTODO ELIMINAR
@@ -151,7 +151,7 @@ class Libreria
 
         if (index == -1)
         {
-            Console.WriteLine("❌ El libro no existe.");
+            Console.WriteLine(" El libro no existe.");
             return;
         }
 
@@ -164,7 +164,7 @@ class Libreria
         Array.Resize(ref nombres, nombres.Length - 1);
         Array.Resize(ref precios, precios.Length - 1);
 
-        Console.WriteLine("✅ Libro eliminado correctamente.");
+        Console.WriteLine(" Libro eliminado correctamente.");
     }
 }
 
@@ -187,7 +187,7 @@ class Program
 
             if (!int.TryParse(Console.ReadLine(), out opcion))
             {
-                Console.WriteLine("❌ Opción inválida.");
+                Console.WriteLine(" Opción inválida.");
                 continue;
             }
 
@@ -197,8 +197,8 @@ class Program
                 case 2: libreria.Mostrar(); break;
                 case 3: libreria.Modificar(); break;
                 case 4: libreria.Eliminar(); break;
-                case 5: Console.WriteLine("👋 Saliendo del programa..."); break;
-                default: Console.WriteLine("❌ Opción inválida."); break;
+                case 5: Console.WriteLine(" Saliendo del programa..."); break;
+                default: Console.WriteLine(" Opción inválida."); break;
             }
 
         } while (opcion != 5);
